@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="pescaderia_peces_action" name="peces"
+                     res_model="pescaderia.peces" />
+	<menuitem name="pescaderia" id="menu_pescaderia" sequence="10" />
+        <menuitem name="Inicio" id="menu_inicio" parent="menu_pescaderia" sequence="10"/>
+        <menuitem id="pescaderia_peces_action"
+                  name="peces"
+                  action="pescaderia_peces_action"
+                  parent="menu_inicio"
+                  sequence="1" />
+		  
+
+        <record id="pescaderia_peces_view_tree" model="ir.ui.view">
+            <field name="name">Lista productos peces</field>
+            <field name="model">pescaderia.peces</field>
+            <field name="arch" type="xml">
+		<tree>
+                    <field name="codigo" />
+                    <field name="nombre" />
+                    <field name="precio" />
+					<field name="temporada" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="pescaderia_peces_view_form" model="ir.ui.view">
+            <field name="name">Formulario de productos peces</field>
+            <field name="model">pescaderia.peces</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="codigo" />
+                        <field name="nombre" />
+                        <field name="precio" />
+						<field name="temporada" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="pescaderia_peces_view_search" model="ir.ui.view">
+            <field name="name">Busqueda de productos peces</field>
+            <field name="model">pescaderia.peces</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="codigo" />
+                    <field name="nombre" />
+                    <field name="precio" />
+					<field name="temporada" />
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>
